@@ -20,7 +20,7 @@
 #define adec_print(...) __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #else
 #define LOG_DEFAULT  0
-char *level;
+static char *level;
 #define adec_print(f,s...) do{level=getenv("LOG_LEVEL"); \
 	                                   if(level&&atoi(level)>LOG_DEFAULT) \
 						   fprintf(stderr,f,##s);\
